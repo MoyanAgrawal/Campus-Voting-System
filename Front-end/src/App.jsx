@@ -42,12 +42,23 @@ function App() {
     }
   );
 
-  return  (
-    <Routes>
-      <Route path="/signup" element={<SignUp setAuth={setAuth} />} />
-      <Route path="*" element={<Signin setAuth={setAuth} />} />
-    </Routes>
-  );
+  return (
+		// !auth ? <Signin setAuth={setAuth} /> :
+			<Routes>
+				<Route path='/signin' element={<Signin setAuth={setAuth} />} />
+				<Route path='*' element={
+					<div className='w-full h-screen min-h-fit grid grid-rows-layout'>
+						<Navbar setAuth={setAuth} />
+						<Routes>
+							<Route path='/' element={<Home />} />
+							<Route path='/profile' element={<Profile />} />
+							<Route path='/manage-poll' element={<ManagePoll />} />
+							<Route path='/manage-user' element={<ManageUser />} />
+						</Routes>
+					</div>
+				} />
+			</Routes>
+	);
 }
 
 export default App;
