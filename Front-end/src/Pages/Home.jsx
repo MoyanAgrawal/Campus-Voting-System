@@ -19,7 +19,7 @@ function Home() {
 	return (
 		<div className='w-full h-full px-14 py-6 flex flex-col items-center gap-y-3 '>
 			<input
-				className='inp w-96 sticky top-1 shadow-lg'
+				className='inp w-96 sticky top-1 shadow-lg focus:outline-none focus:border-transparent'
 				type={'text'}
 				name='Poll Name'
 				placeholder='Search poll here'
@@ -27,7 +27,7 @@ function Home() {
 				onChange={(e) => { setPollName(e.target.value) }}
 			/>
 			{
-				polls == null ? <div>Loading...</div> :
+				polls == null ? <div class="text-[#4361ee]">Loading...</div> :
 					(
 						polls.length === 0 ? <div>Poll Not Found</div> :
 							<ul className='w-full' >

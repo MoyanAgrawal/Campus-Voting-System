@@ -173,7 +173,7 @@ function ManagePoll() {
 				onSubmit={handle_search}
 			>
 				<input
-					className='inp w-96'
+					className='inp w-96 focus:outline-none focus:border-transparent'
 					type={'text'}
 					name='Poll ID'
 					placeholder='Search poll here'
@@ -183,14 +183,15 @@ function ManagePoll() {
 				<button
 					name='search'
 					type='submit'
-					className='btn'
+					className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+					data-ripple-light="true"
 				>
 					Search Poll
 				</button>
 			</form>
 			<span>{loading}</span>
 			<form
-				className='px-10 py-12 bg-white rounded w-96 flex flex-col gap-y-3 items-center'
+				className='px-10 py-12 bg-white rounded w-96 flex flex-col gap-y-3 items-center shadow-lg shadow-blue-500/50 '
 				onSubmit={(e) => { e.preventDefault() }}
 			>
 				<h1 className='text-3xl text-blue-600' >Manage Poll</h1>
@@ -258,19 +259,19 @@ function ManagePoll() {
 				/>
 				{
 					flag ?
-						<button
-							name='create'
-							type='submit'
-							className='btn'
-							onClick={handle_create}
-						>
-							Create Poll
-						</button>
+						<button 
+						name='create'
+						type='submit'
+						onClick={handle_create}
+						className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+						data-ripple-light="true">
+						Create Poll
+					  </button>
 						: <>
 							<button
 								name='update'
 								type='submit'
-								className='btn-plain text-white bg-green-600'
+								className="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
 								onClick={handle_update}
 							>
 								Update Poll
@@ -288,7 +289,7 @@ function ManagePoll() {
 				<button
 					name='cancel'
 					type='submit'
-					className='inp bg-white text-gray-700'
+					className="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 "
 					onClick={handle_cancel}
 				>
 					Cancel
